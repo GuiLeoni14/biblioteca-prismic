@@ -154,6 +154,16 @@ const init = async () => {
     pageSize: 5,
   })
 
+  const pageResponse = await client.getSingle('home')
+  
+  const page = {
+    title: prismic.asHTML(pageResponse.data.title),
+    description: prismic.asHTML(pageResponse.data.subtitle)
+  }
+
+  document.querySelector('.hero-content').innerHTML += page.title;
+  document.querySelector('.hero-content').innerHTML += page.description;
+
   const livros = response.map(({ uid, data: livro }) => {
     return new Livro({
       id: uid,
