@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Digital</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <span>📚 Biblioteca Digital</span>
+      <h1>Descubra seu próximo livro</h1>
+      <p>Uma coleção cuidadosamente selecionada de livros para expandir seus horizontes e alimentar sua curiosidade.</p>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="search-container">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="text" class="search-input" placeholder="Pesquisar livros, autores ou categorias..." id="searchInput">
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-category="todos">Todos</button>
+      <button class="filter-btn" data-category="ficção">Ficção</button>
+      <button class="filter-btn" data-category="tecnologia">Tecnologia</button>
+      <button class="filter-btn" data-category="filosofia">Filosofia</button>
+      <button class="filter-btn" data-category="biografia">Biografia</button>
+      <button class="filter-btn" data-category="ciência">Ciência</button>
+    </div>
+  </section>
+
+  <section class="books">
+    <div class="container">
+      <div class="books-header">
+        <h2>Acervo Disponível</h2>
+        <p>Explore nossa coleção de livros cuidadosamente organizados por categoria e disponibilidade.</p>
+      </div>
+
+      <div class="books-grid" id="booksGrid">
+        <!-- Os livros serão inseridos aqui pelo JavaScript -->
+        <div class="book-card">
+          <div class="book-cover" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)">
+            <img src="https://m.media-amazon.com/images/I/81RV7QSY2jL._SY342_.jpg" />
+          </div>
+          <div class="book-content">
+            <span class="book-category">historia</span>
+            <h3 class="book-title">Uma velha história do Brasil</h3>
+            <p class="book-author">por Walter Isaacson</p>
+            <div class="book-footer">
+              <div class="book-status">
+                <div class="status-dot"></div>
+                <span>Disponível</span>
+              </div>
+              <span class="book-pages">656 páginas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="modal-close" id="modalClose">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-book-info">
+          <div class="modal-cover" id="modalCover"></div>
+          <div class="modal-details">
+            <h2 id="modalTitle"></h2>
+            <p class="modal-author" id="modalAuthor"></p>
+            <span class="modal-category" id="modalCategory"></span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <p class="modal-description" id="modalDescription"></p>
+
+        <div class="modal-meta">
+          <div class="meta-item">
+            <div class="meta-value" id="modalPages"></div>
+            <div class="meta-label">Páginas</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-value" id="modalYear"></div>
+            <div class="meta-label">Ano</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-value" id="modalLanguage"></div>
+            <div class="meta-label">Idioma</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-value" id="modalStatus"></div>
+            <div class="meta-label">Status</div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="reserveBtn">Reservar Livro</button>
+          <button class="btn btn-secondary" id="favoriteBtn">Adicionar aos Favoritos</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
