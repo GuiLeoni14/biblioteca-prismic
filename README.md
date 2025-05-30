@@ -2,6 +2,9 @@
 
 Uma aplicação web simples para visualização, busca e filtragem de livros. Desenvolvida em HTML, CSS e JavaScript, com foco em praticar lógica de programação, manipulação do DOM e organização de dados.
 
+> 🔗 Acesse o projeto em produção: [Peekode](https://peekode.vercel.app/GuiLeoni14)  
+> 📘 Documentação da API: [Prismic Client v7](https://prismic.io/docs/technical-reference/prismicio-client/v7)
+
 ## ✨ Funcionalidades
 
 - 🔍 **Busca de livros** por título, autor ou categoria
